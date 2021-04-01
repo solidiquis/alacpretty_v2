@@ -3,6 +3,7 @@ package main
 
 import (
 	ap "github.com/solidiquis/alacpretty_v2/internal"
+	us "github.com/solidiquis/alacpretty_v2/internal/uistructs"
 	"os"
 	"sort"
 )
@@ -31,7 +32,7 @@ func themeShuffler(config []byte) {
 		}
 	}
 
-	themesLi := ap.InitList(themes, selected)
+	themesLi := us.InitList(themes, selected)
 	themesLi.Render()
 
 	ap.ListenForInput(config, themesLi)

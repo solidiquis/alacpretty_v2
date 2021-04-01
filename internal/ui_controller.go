@@ -1,6 +1,7 @@
 package alacpretty
 
 import (
+	us "github.com/solidiquis/alacpretty_v2/internal/uistructs"
 	ansi "github.com/solidiquis/ansigo"
 	"os"
 )
@@ -26,14 +27,14 @@ event:
 		case key := <-stdin:
 			switch b := key[0]; b {
 			case KEY_RETURN:
-				newThm := FormatTheme(activeComp.(*List).Items[activeComp.(*List).Selected])
+				newThm := FormatTheme(activeComp.(*us.List).Items[activeComp.(*us.List).Selected])
 				updatedConf := ChangeTheme(config, newThm)
 				ApplyChanges(updatedConf)
 			case KEY_ESC:
 				key = SpecialKeys(stdin)
-				activeComp.(*List).Update(key)
+				activeComp.(*us.List).Update(key)
 			default:
-				activeComp.(*List).Update(key)
+				activeComp.(*us.List).Update(key)
 			}
 		case <-done:
 			Cleanup()
