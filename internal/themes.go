@@ -4,10 +4,12 @@ import (
 	"strings"
 )
 
+// Converts "SOLARIZED_DARK" to "Solarized Dark"
 func ThemePresenter(txt string) string {
 	return strings.Title(strings.ToLower(strings.Replace(txt, "_", " ", -1)))
 }
 
+// Converts "Solarized Dark" to "SOLARIZED_DARK"
 func FormatTheme(txt string) string {
 	return strings.ToUpper(strings.Replace(txt, " ", "_", -1))
 }

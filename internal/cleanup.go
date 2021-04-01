@@ -7,6 +7,7 @@ import (
 	"syscall"
 )
 
+// For graceful exiting of program.
 func ListenForExit(done chan os.Signal) {
 	sigs := make(chan os.Signal, 1)
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
@@ -14,6 +15,7 @@ func ListenForExit(done chan os.Signal) {
 	done <- sig
 }
 
+// Restores terminal defaults.
 func Cleanup() {
 	ansi.CursorShow()
 }

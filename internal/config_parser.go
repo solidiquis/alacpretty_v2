@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 	"regexp"
+	"strings"
 )
 
 const (
@@ -14,7 +15,7 @@ const (
 	RE_OPACITY  = `background_opacity:\s*\d+.\d+`
 )
 
-// Sets global variable ConfPath in init.go
+// Sets global variable ConfPath in init.go.
 func FindConf() {
 	homeDir, err := os.UserHomeDir()
 	must(err)
@@ -80,6 +81,8 @@ func ChangeTheme(config []byte, theme string) []byte {
 		logErrExit(Errors["THEME_UNKNOWN"])
 	}
 
+	newTh = strings.Trim(newTh, "\n")
+
 	re, _ := regexp.Compile(RE_COLORS)
 	if match := re.Match(config); !match {
 		logErrExit(Errors["YAML_FORMAT"])
@@ -89,3 +92,8 @@ func ChangeTheme(config []byte, theme string) []byte {
 
 	return []byte(updatedConf)
 }
+
+// Returns the current opacity.
+//func CurrentOpacity() float64 {
+
+//}

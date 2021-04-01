@@ -15,7 +15,7 @@ func main() {
 		i++
 	}
 
-	themesLi := ap.InitList(themes, 0, ap.LIST_FRAME_LENGTH)
+	themesLi := ap.InitList(themes, 0)
 	themesLi.Render()
 
 	ap.ListenForInput(config, themesLi)
