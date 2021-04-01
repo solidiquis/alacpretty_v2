@@ -27,7 +27,8 @@ event:
 			switch b := key[0]; b {
 			case KEY_RETURN:
 				newThm := FormatTheme(activeComp.(*List).Items[activeComp.(*List).Selected])
-				ChangeTheme(config, newThm)
+				updatedConf := ChangeTheme(config, newThm)
+				ApplyChanges(updatedConf)
 			case KEY_ESC:
 				key = SpecialKeys(stdin)
 				activeComp.(*List).Update(key)

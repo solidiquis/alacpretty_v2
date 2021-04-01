@@ -1,2 +1,5 @@
 run:
-	go run cmd/main.go
+	go run cmd/alacpretty/main.go
+
+debug:
+	go run cmd/debug/main.go

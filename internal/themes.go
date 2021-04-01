@@ -47,7 +47,6 @@ var Themes = map[string]string{
 	"SNAZZY":                SNAZZY,
 	"SOLARIZED_DARK":        SOLARIZED_DARK,
 	"SOLARIZED_LIGHT":       SOLARIZED_LIGHT,
-	"STORM":                 STORM,
 	"TAERMINAL":             TAERMINAL,
 	"TANGO_DARK":            TANGO_DARK,
 	"TENDER":                TENDER,
@@ -60,10 +59,7 @@ var Themes = map[string]string{
 }
 
 const COBALT2 = `
-# From the famous Cobalt2 sublime theme
-# Source : https://github.com/wesbos/cobalt2/tree/master/Cobalt2
 colors:
-  # Default colors
   primary:
     background: '0x122637'
     foreground: '0xffffff'
@@ -72,7 +68,6 @@ colors:
     text: '0x122637'
     cursor: '0xf0cb09'
 
-  # Normal colors
   normal:
     black:   '0x000000'
     red:     '0xff0000'
@@ -83,7 +78,6 @@ colors:
     cyan:    '0x00bbbb'
     white:   '0xbbbbbb'
 
-  # Bright colors
   bright:
     black:   '0x545454'
     red:     '0xf40d17'
@@ -97,7 +91,6 @@ colors:
 
 const AFTERGLOW = `
 colors:
-  # Default colors
   primary:
     background: '0x2c2c2c'
     foreground: '0xd6d6d6'
@@ -107,12 +100,10 @@ colors:
     dim_background:    '0x202020' # not sure
     bright_background: '0x3a3a3a' # not sure
 
-  # Cursor colors
   cursor:
     text:   '0x2c2c2c'
     cursor: '0xd9d9d9'
 
-  # Normal colors
   normal:
     black:   '0x1c1c1c'
     red:     '0xbc5653'
@@ -123,7 +114,6 @@ colors:
     cyan:    '0x86d3ce'
     white:   '0xcacaca'
 
-  # Bright colors
   bright:
     black:   '0x636363'
     red:     '0xbc5653'
@@ -134,7 +124,6 @@ colors:
     cyan:    '0x86d3ce'
     white:   '0xf7f7f7'
 
-  # Dim colors
   dim:
     black:   '0x232323'
     red:     '0x74423f'
@@ -148,17 +137,14 @@ colors:
 
 const ARGONAUT = `
 colors:
-  # Default colors
   primary:
     background: '0x292C3E'
     foreground: '0xEBEBEB'
 
-  # Cursor colors
   cursor:
     text: '0xFF261E'
     cursor: '0xFF261E'
 
-  # Normal colors
   normal:
     black:   '0x0d0d0d'
     red:     '0xFF301B'
@@ -169,7 +155,6 @@ colors:
     cyan:    '0x21DEEF'
     white:   '0xEBEBEB'
 
-  # Bright colors
   bright:
     black:   '0x6D7070'
     red:     '0xFF4352'
@@ -182,14 +167,11 @@ colors:
 `
 
 const AYU_DARK = `
-# Colors (Ayu Dark)
 colors:
-  # Default colors
   primary:
     background: '0x0A0E14'
     foreground: '0xB3B1AD'
 
-  # Normal colors
   normal:
     black:   '0x01060E'
     red:     '0xEA6C73'
@@ -200,7 +182,6 @@ colors:
     cyan:    '0x90E1C6'
     white:   '0xC7C7C7'
 
-  # Bright colors
   bright:
     black:   '0x686868'
     red:     '0xF07178'
@@ -213,9 +194,7 @@ colors:
 `
 
 const BASE16_DEFAULT_DARK = `
-# Colors (Base16 Default Dark)
 colors:
-  # Default colors
   primary:
     background: '0x181818'
     foreground: '0xd8d8d8'
@@ -224,7 +203,6 @@ colors:
     text: '0xd8d8d8'
     cursor: '0xd8d8d8'
 
-  # Normal colors
   normal:
     black:   '0x181818'
     red:     '0xab4642'
@@ -235,7 +213,6 @@ colors:
     cyan:    '0x86c1b9'
     white:   '0xd8d8d8'
 
-  # Bright colors
   bright:
     black:   '0x585858'
     red:     '0xab4642'
@@ -248,14 +225,11 @@ colors:
 `
 
 const BLOOD_MOON = `
-# Colors (Blood Moon)
 colors:
-  # Default colors
   primary:
     background: '0x10100E'
     foreground: '0xC6C6C4'
 
-  # Normal colors
   normal:
     black:   '0x10100E'
     red:     '0xC40233'
@@ -266,7 +240,6 @@ colors:
     cyan:    '0x20B2AA'
     white:   '0xC6C6C4'
 
-  # Bright colors
   bright:
     black:   '0x696969'
     red:     '0xFF2400'
@@ -279,9 +252,7 @@ colors:
 `
 
 const BREEZE = `
-# KDE Breeze (Ported from Konsole)
 colors:
-  # Default colors
   primary:
     background: '0x232627'
     foreground: '0xfcfcfc'
@@ -291,7 +262,6 @@ colors:
     dim_background: '0x31363b'
     bright_background: '0x000000'
 
-  # Normal colors
   normal:
     black: '0x232627'
     red: '0xed1515'
@@ -302,7 +272,6 @@ colors:
     cyan: '0x1abc9c'
     white: '0xfcfcfc'
 
-  # Bright colors
   bright:
     black: '0x7f8c8d'
     red: '0xc0392b'
@@ -313,7 +282,6 @@ colors:
     cyan: '0x16a085'
     white: '0xffffff'
 
-  # Dim colors
   dim:
     black: '0x31363b'
     red: '0x783228'
@@ -326,14 +294,11 @@ colors:
 `
 
 const CAMPBELL = `
-# Campbell (Windows 10 default)
 colors:
-  # Default colors
   primary:
     background: '0x0c0c0c'
     foreground: '0xcccccc'
 
-  # Normal colors
   normal:
     black:      '0x0c0c0c'
     red:        '0xc50f1f'
@@ -344,7 +309,6 @@ colors:
     cyan:       '0x3a96dd'
     white:      '0xcccccc'
 
-  # Bright colors
   bright:
     black:      '0x767676'
     red:        '0xe74856'
@@ -357,9 +321,7 @@ colors:
 `
 
 const CHALLENGER_DEEP = `
-# Colors (Challenger Deep)
 colors:
-  # Default colors
   primary:
     background: '0x1e1c31'
     foreground: '0xcbe1e7'
@@ -367,7 +329,6 @@ colors:
   cursor:
     text: '0xff271d'
     cursor: '0xfbfcfc'
-  # Normal colors
   normal:
     black:   '0x141228'
     red:     '0xff5458'
@@ -377,7 +338,6 @@ colors:
     magenta: '0x906cff'
     cyan:    '0x63f2f1'
     white:   '0xa6b3cc'
-  # Bright colors
   bright:
     black:   '0x565575'
     red:     '0xff8080'
@@ -390,10 +350,7 @@ colors:
 `
 
 const CYBERPUNK_NEON = `
-# Cyber Punk Neon
-# Source: https://github.com/Roboron3042/Cyberpunk-Neon
 colors:
-  # Default colors
   primary:
     background: "0x000b1e"
     foreground: "0x0abdc6"
@@ -402,7 +359,6 @@ colors:
     text:   "0x000b1e"
     cursor: "0x0abdc6"
 
-  # Normal colors
   normal:
     black:   "0x123e7c"
     red:     "0xff0000"
@@ -413,7 +369,6 @@ colors:
     cyan:    "0x0abdc6"
     white:   "0xd7d7d5"
 
-  # Bright colors
   bright:
     black:   "0x1c61c2"
     red:     "0xff0000"
@@ -426,14 +381,11 @@ colors:
 `
 
 const DARCULA = `
-# Colors (Dracula)
 colors:
-  # Default colors
   primary:
     background: '0x282a36'
     foreground: '0xf8f8f2'
 
-  # Normal colors
   normal:
     black:   '0x000000'
     red:     '0xff5555'
@@ -444,7 +396,6 @@ colors:
     cyan:    '0x8be9fd'
     white:   '0xbfbfbf'
 
-  # Bright colors
   bright:
     black:   '0x282a35'
     red:     '0xff6e67'
@@ -457,14 +408,11 @@ colors:
 `
 
 const DARK_PASTELS = `
-# Colors (Konsole's Dark Pastels)
 colors:
-  # Default colors
   primary:
     background: '0x2C2C2C'
     foreground: '0xDCDCCC'
 
-  # Normal colors
   normal:
     black:   '0x3F3F3F'
     red:     '0x705050'
@@ -475,7 +423,6 @@ colors:
     cyan:    '0x8CD0D3'
     white:   '0xDCDCCC'
 
-  # Bright colors
   bright:
     black:   '0x709080'
     red:     '0xDCA3A3'
@@ -488,14 +435,11 @@ colors:
 `
 
 const DRACULA = `
-# Colors (Dracula)
 colors:
-  # Default colors
   primary:
     background: '0x282a36'
     foreground: '0xf8f8f2'
  
-  # Normal colors
   normal:
     black:   '0x000000'
     red:     '0xff5555'
@@ -506,7 +450,6 @@ colors:
     cyan:    '0x8be9fd'
     white:   '0xbbbbbb'
  
-  # Bright colors
   bright:
     black:   '0x555555'
     red:     '0xff5555'
@@ -519,10 +462,7 @@ colors:
 `
 
 const FALCON = `
-# falcon colorscheme for alacritty
-# by fenetikm, https://github.com/fenetikm/falcon
 colors:
-  # Default colors
   primary:
     background: '0x020221'
     foreground: '0xb4b4b9'
@@ -531,7 +471,6 @@ colors:
     text: '0x020221'
     cursor: '0xffe8c0'
 
-  # Normal colors
   normal:
     black:   '0x000004'
     red:     '0xff3600'
@@ -542,7 +481,6 @@ colors:
     cyan:    '0x34bfa4'
     white:   '0xb4b4b9'
 
-  # Bright colors
   bright:
     black:   '0x020221'
     red:     '0xff8e78'
@@ -555,14 +493,11 @@ colors:
 `
 
 const GOTHAM = `
-# Colors (Gotham)
 colors:
-  # Default colors
   primary:
     background: '0x0a0f14'
     foreground: '0x98d1ce'
 
-  # Normal colors
   normal:
     black: '0x0a0f14'
     red: '0xc33027'
@@ -573,7 +508,6 @@ colors:
     cyan: '0x33859d'
     white: '0x98d1ce'
 
-  # Bright colors
   bright:
     black: '0x10151b'
     red: '0xd26939'
@@ -586,16 +520,11 @@ colors:
 `
 
 const GRUVBOX_DARK = `
-# Colors (Gruvbox dark)
 colors:
-  # Default colors
   primary:
-    # hard contrast: background = '0x1d2021'
     background: '0x282828'
-    # soft contrast: background = '0x32302f'
     foreground: '0xebdbb2'
 
-  # Normal colors
   normal:
     black:   '0x282828'
     red:     '0xcc241d'
@@ -606,7 +535,6 @@ colors:
     cyan:    '0x689d6a'
     white:   '0xa89984'
 
-  # Bright colors
   bright:
     black:   '0x928374'
     red:     '0xfb4934'
@@ -619,16 +547,11 @@ colors:
 `
 
 const GRUVBOX_LIGHT = `
-# Colors (Gruvbox light)
 colors:
-  # Default colors
   primary:
-    # hard contrast: background = '0xf9f5d7'
     background: '0xfbf1c7'
-    # soft contrast: background = '0xf2e5bc'
     foreground: '0x3c3836'
 
-  # Normal colors
   normal:
     black:   '0xfbf1c7'
     red:     '0xcc241d'
@@ -639,7 +562,6 @@ colors:
     cyan:    '0x689d6a'
     white:   '0x7c6f64'
 
-  # Bright colors
   bright:
     black:   '0x928374'
     red:     '0x9d0006'
@@ -652,9 +574,7 @@ colors:
 `
 
 const HIGH_CONTRAST = `
-# Colors (High Contrast)
 colors:
-  # Default colors
   primary:
     background: '0x444444'
     foreground: '0xdddddd'
@@ -663,7 +583,6 @@ colors:
     text: '0xaaaaaa'
     cursor: '0xffffff'
 
-  # Normal colors
   normal:
     black:   '0x000000'
     red:     '0xff0000'
@@ -674,7 +593,6 @@ colors:
     cyan:    '0x00ffff'
     white:   '0xffffff'
 
-  # Bright colors
   bright:
     black:   '0x000000'
     red:     '0xff0000'
@@ -687,9 +605,7 @@ colors:
 `
 
 const HYPER = `
-# Colors (Hyper)
 colors:
-  # Default colors
   primary:
     background: '0x000000'
     foreground: '0xffffff'
@@ -697,7 +613,6 @@ colors:
     text: '0xF81CE5'
     cursor: '0xffffff'
 
-  # Normal colors
   normal:
     black:   '0x000000'
     red:     '0xfe0100'
@@ -708,7 +623,6 @@ colors:
     cyan:    '0x00ffff'
     white:   '0xd0d0d0'
 
-  # Bright colors
   bright:
     black:   '0x808080'
     red:     '0xfe0100'
@@ -721,14 +635,11 @@ colors:
 `
 
 const ITERM = `
-# Colors (iTerm 2 default theme)
 colors:
-  # Default colors
   primary:
     background: '0x101421'
     foreground: '0xfffbf6'
 
-  # Normal colors
   normal:
     black:   '0x2e2e2e'
     red:     '0xeb4129'
@@ -739,7 +650,6 @@ colors:
     cyan:    '0x64dbed'
     white:   '0xe5e9f0'
 
-  # Bright colors
   bright:
     black:   '0x565656'
     red:     '0xec5357'
@@ -752,15 +662,12 @@ colors:
 `
 
 const KONSOLE_LINUX = `
-# Color theme ported from Konsole: Linux colors 
 colors:  
   primary:
     foreground: '0xe3e3e3'
     bright_foreground: '0xffffff'
     dim_foreground:    '0xe3e3e3'
     background: '0x1f1f1f'
-    bright_background: '0x686868' # not sure
-    dim_background:    '0x1f1f1f' # not sure
 
   cursor:
     text: '0x191622'
@@ -806,9 +713,7 @@ colors:
 `
 
 const LOW_CONTRAST = `
-# Colors (Dim)
 colors:
-  # Default colors
   primary:
     background: '0x333333'
     foreground: '0xdddddd'
@@ -817,7 +722,6 @@ colors:
     text: '0xaaaaaa'
     cursor: '0xffffff'
 
-  # Normal colors
   normal:
     black:   '0x000000'
     red:     '0xbb0000'
@@ -828,7 +732,6 @@ colors:
     cyan:    '0x00bbbb'
     white:   '0xbbbbbb'
 
-  # Bright colors
   bright:
     black:   '0x000000'
     red:     '0xbb0000'
@@ -841,14 +744,11 @@ colors:
 `
 
 const MATERIAL_THEME = `
-# Colors (Material Theme)
 colors:
-  # Default colors
   primary:
     background: '0x1e282d'
     foreground: '0xc4c7d1'
 
-  # Normal colors
   normal:
     black:   '0x666666'
     red:     '0xeb606b'
@@ -859,7 +759,6 @@ colors:
     cyan:    '0xaeddff'
     white:   '0xffffff'
 
-  # Bright colors
   bright:
     black:   '0xff262b'
     red:     '0xeb606b'
@@ -872,14 +771,11 @@ colors:
 `
 
 const MATERIAL_THEME_MOD = `
-# Colors (Material Theme)
 colors:
-  # Default colors
   primary:
     background: '0x1e282d'
     foreground: '0xc4c7d1'
 
-  # Normal colors
   normal:
     black:   '0x666666'
     red:     '0xeb606b'
@@ -890,7 +786,6 @@ colors:
     cyan:    '0xaeddff'
     white:   '0xffffff'
 
-  # Bright colors
   bright:
     black:   '0xa1a1a1'
     red:     '0xeb606b'
@@ -903,14 +798,11 @@ colors:
 `
 
 const NORD = `
-# Colors (Nord)
 colors:
-  # Default colors
   primary:
     background: '0x2E3440'
     foreground: '0xD8DEE9'
 
-  # Normal colors
   normal:
     black:   '0x3B4252'
     red:     '0xBF616A'
@@ -921,7 +813,6 @@ colors:
     cyan:    '0x88C0D0'
     white:   '0xE5E9F0'
 
-  # Bright colors
   bright:
     black:   '0x4C566A'
     red:     '0xBF616A'
@@ -934,14 +825,11 @@ colors:
 `
 
 const OCEANIC_NEXT = `
-# Colors (Oceanic Next)
 colors:
-  # Default colors
   primary:
     background: '0x1b2b34'
     foreground: '0xd8dee9'
 
-  # Normal colors
   normal:
     black:   '0x29414f'
     red:     '0xec5f67'
@@ -952,7 +840,6 @@ colors:
     cyan:    '0x5fb3b3'
     white:   '0x65737e'
 
-  # Bright colors
   bright:
     black:   '0x405860'
     red:     '0xec5f67'
@@ -965,14 +852,11 @@ colors:
 `
 
 const ONE_DARK = `
-# Colors (One Dark)
 colors:
-  # Default colors
   primary:
     background: '0x1e2127'
     foreground: '0xabb2bf'
 
-  # Normal colors
   normal:
     black:   '0x1e2127'
     red:     '0xe06c75'
@@ -983,7 +867,6 @@ colors:
     cyan:    '0x56b6c2'
     white:   '0xabb2bf'
 
-  # Bright colors
   bright:
     black:   '0x5c6370'
     red:     '0xe06c75'
@@ -996,9 +879,7 @@ colors:
 `
 
 const PAPERCOLOR_LIGHT = `
-# Colors (PaperColor - Light)
 colors:
-  # Default colors
   primary:
     background: '0xeeeeee'
     foreground: '0x878787'
@@ -1007,7 +888,6 @@ colors:
     text: '0xeeeeee'
     cursor: '0x878787'
 
-  # Normal colors
   normal:
     black:   '0xeeeeee'
     red:     '0xaf0000'
@@ -1018,7 +898,6 @@ colors:
     cyan:    '0x005f87'
     white:   '0x444444'
 
-  # Bright colors
   bright:
     black:   '0xbcbcbc'
     red:     '0xd70000'
@@ -1031,13 +910,10 @@ colors:
 `
 
 const PENCIL_DARK = `
-# Colors (Pencil Dark)
 colors:
-  # Default Colors
   primary:
     background: '0x212121'
     foreground: '0xf1f1f1'
-  # Normal colors
   normal:
     black:   '0x212121'
     red:     '0xc30771'
@@ -1047,7 +923,6 @@ colors:
     magenta: '0x523c79'
     cyan:    '0x20a5ba'
     white:   '0xe0e0e0'
-  # Bright colors
   bright:
     black:   '0x818181'
     red:     '0xfb007a'
@@ -1060,13 +935,10 @@ colors:
 `
 
 const PENCIL_LIGHT = `
-# Colors (Pencil Light)
 colors:
-  # Default Colors
   primary:
     background: '0xf1f1f1'
     foreground: '0x424242'
-  # Normal colors
   normal:
     black:   '0x212121'
     red:     '0xc30771'
@@ -1076,7 +948,6 @@ colors:
     magenta: '0x523c79'
     cyan:    '0x20a5ba'
     white:   '0xe0e0e0'
-  # Bright colors
   bright:
     black:   '0x212121'
     red:     '0xfb007a'
@@ -1090,7 +961,6 @@ colors:
 
 const REMEDY_DARK = `
 colors:
-  # Default colors
   primary:
     background: '0x2c2b2a'
     foreground: '0xf9e7c4'
@@ -1100,12 +970,10 @@ colors:
     dim_background:    '0x202322'
     bright_background: '0x353433'
 
-  # Cursor colors
   cursor:
     text:   '0xf9e7c4'
     cursor: '0xf9e7c4'
 
-  # Normal colors
   normal:
     black:   '0x282a2e'
     blue:    '0x5f819d'
@@ -1117,7 +985,6 @@ colors:
     white:   '0x707880'
     yellow:  '0xde935f'
 
-  # Bright colors
   bright:
     black:   '0x373b41'
     blue:    '0x81a2be'
@@ -1130,14 +997,11 @@ colors:
 `
 
 const SNAZZY = `
-# Colors (Snazzy)
 colors:
-  # Default colors
   primary:
     background: '0x282a36'
     foreground: '0xeff0eb'
 
-  # Normal colors
   normal:
     black:   '0x282a36'
     red:     '0xff5c57'
@@ -1148,7 +1012,6 @@ colors:
     cyan:    '0x9aedfe'
     white:   '0xf1f1f0'
 
-  # Bright colors
   bright:
     black:   '0x686868'
     red:     '0xff5c57'
@@ -1161,14 +1024,11 @@ colors:
 `
 
 const SOLARIZED_DARK = `
-# Colors (Solarized Dark)
 colors:
-  # Default colors
   primary:
     background: '0x002b36'
     foreground: '0x839496'
 
-  # Normal colors
   normal:
     black:   '0x073642'
     red:     '0xdc322f'
@@ -1179,7 +1039,6 @@ colors:
     cyan:    '0x2aa198'
     white:   '0xeee8d5'
 
-  # Bright colors
   bright:
     black:   '0x002b36'
     red:     '0xcb4b16'
@@ -1192,14 +1051,11 @@ colors:
 `
 
 const SOLARIZED_LIGHT = `
-# Colors (Solarized Light)
 colors:
-  # Default colors
   primary:
     background: '0xfdf6e3'
     foreground: '0x586e75'
 
-  # Normal colors
   normal:
     black:   '0x073642'
     red:     '0xdc322f'
@@ -1210,7 +1066,6 @@ colors:
     cyan:    '0x2aa198'
     white:   '0xeee8d5'
 
-  # Bright colors
   bright:
     black:   '0x002b36'
     red:     '0xcb4b16'
@@ -1222,14 +1077,8 @@ colors:
     white:   '0xfdf6e3'
 `
 
-const STORM = `
-404: Not Found
-`
-
 const TAERMINAL = `
-# Colors (Taerminal)
 colors:
-  # Default colors
   primary:
     background: '0x26282a'
     foreground: '0xf0f0f0'
@@ -1237,7 +1086,6 @@ colors:
     background: '0xf0f0f0'
     foreground: '0x26282a'
 
-  # Normal colors
   normal:
     black:   '0x26282a'
     red:     '0xff8878'
@@ -1248,7 +1096,6 @@ colors:
     cyan:    '0xa2e1f8'
     white:   '0xf1f1f1'
 
-  # Bright colors
   bright:
     black:   '0x6f6f6f'
     red:     '0xfe978b'
@@ -1261,7 +1108,6 @@ colors:
 `
 
 const TANGO_DARK = `
-# GNOME Terminal Tango Dark
 colors:
   primary:
     background: '0x2e3436'
@@ -1290,12 +1136,10 @@ colors:
 
 const TENDER = `
 colors:
-  # Default colors
   primary:
     background: '0x282828'
     foreground: '0xeeeeee'
 
-  # Normal colors
   normal:
     black:   '0x282828'
     red:     '0xf43753'
@@ -1306,7 +1150,6 @@ colors:
     cyan:    '0x73cef4'
     white:   '0xeeeeee'
 
-  # Bright colors
   bright:
     black:   '0x4c4c4c'
     red:     '0xf43753'
@@ -1319,14 +1162,11 @@ colors:
 `
 
 const TERMINAL_APP = `
-# Colors (Terminal.app)
 colors:
-  # Default colors
   primary:
     background: '0x000000'
     foreground: '0xb6b6b6'
 
-  # Normal colors
   normal:
     black:   '0x000000'
     red:     '0x990000'
@@ -1337,7 +1177,6 @@ colors:
     cyan:    '0x00a6b2'
     white:   '0xbfbfbf'
 
-  # Bright colors
   bright:
     black:   '0x666666'
     red:     '0xe50000'
@@ -1351,14 +1190,11 @@ colors:
 
 const THE_LOVELACE = `
 colors:
-  # Default colors
   primary:
     background: '0x1D1F28'
     foreground: '0xFDFDFD'
 
-  # Normal colors
   normal:
-  # Bright colors
     black:   '0x282A36'
     red:     '0xF37F97'
     green:   '0x5ADECD'
@@ -1376,13 +1212,10 @@ colors:
     magenta: '0x556FFF'
     cyan:    '0x3FDCEE'
     white:   '0xBEBEC1'
-  indexed_colors: []
 `
 
 const TOMORROW_NIGHT = `
-# Colors (Tomorrow Night)
 colors:
-  # Default colors
   primary:
     background: '0x1d1f21'
     foreground: '0xc5c8c6'
@@ -1391,7 +1224,6 @@ colors:
     text: '0x1d1f21'
     cursor: '0xffffff'
 
-  # Normal colors
   normal:
     black:   '0x1d1f21'
     red:     '0xcc6666'
@@ -1402,7 +1234,6 @@ colors:
     cyan:    '0x70c0ba'
     white:   '0x373b41'
 
-  # Bright colors
   bright:
     black:   '0x666666'
     red:     '0xff3334'
@@ -1415,14 +1246,11 @@ colors:
 `
 
 const TOMORROW_NIGHT_BRIGHT = `
-# Colors (Tomorrow Night Bright)
 colors:
-  # Default colors
   primary:
     background: '0x000000'
     foreground: '0xeaeaea'
 
-  # Normal colors
   normal:
     black:   '0x000000'
     red:     '0xd54e53'
@@ -1433,7 +1261,6 @@ colors:
     cyan:    '0x70c0ba'
     white:   '0x424242'
 
-  # Bright colors
   bright:
     black:   '0x666666'
     red:     '0xff3334'
@@ -1446,14 +1273,11 @@ colors:
 `
 
 const WOMBAT = `
-# Colors (Wombat)
 colors:
-  # Default colors
   primary:
     background: '0x1f1f1f'
     foreground: '0xe5e1d8'
 
-  # Normal colors
   normal:
     black:   '0x000000'
     red:     '0xf7786d'
@@ -1464,7 +1288,6 @@ colors:
     cyan:    '0x90fdf8'
     white:   '0xe5e1d8'
 
-  # Bright colors
   bright:
     black:   '0xb4b4b4'
     red:     '0xf99f92'
@@ -1477,13 +1300,10 @@ colors:
 `
 
 const XTERM = `
-# XTerm's default colors
 colors:
-  # Default colors
   primary:
     background: '0x000000'
     foreground: '0xffffff'
-  # Normal colors
   normal:
     black:   '0x000000'
     red:     '0xcd0000'
@@ -1494,7 +1314,6 @@ colors:
     cyan:    '0x00cdcd'
     white:   '0xe5e5e5'
 
-  # Bright colors
   bright:
     black:   '0x7f7f7f'
     red:     '0xff0000'

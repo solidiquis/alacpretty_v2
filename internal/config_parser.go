@@ -46,7 +46,8 @@ func ConfigToBytes() []byte {
 	return conf
 }
 
-func ApplyChanges(updatedConf string) {
+// Truncates alacritty.yml and replaces it with updatedConf
+func ApplyChanges(updatedConf []byte) {
 	err := os.Truncate(ConfPath, 0)
 	must(err)
 
@@ -55,12 +56,12 @@ func ApplyChanges(updatedConf string) {
 	defer f.Close()
 
 	writer := bufio.NewWriter(f)
-	_, err = writer.WriteString(updatedConf)
+	_, err = writer.WriteString(string((updatedConf)))
 
 	writer.Flush()
 }
 
-// Reports the current theme
+// Reports the current theme.
 func CurrentTheme(conf []byte) (string, error) {
 	for k, v := range Themes {
 		match, _ := regexp.Match(v, conf)
@@ -72,7 +73,8 @@ func CurrentTheme(conf []byte) (string, error) {
 	return "", Errors["THEME_UNKNOWN"]
 }
 
-func ChangeTheme(config []byte, theme string) {
+// Returns config as byte slice with updated theme.
+func ChangeTheme(config []byte, theme string) []byte {
 	newTh, ok := Themes[theme]
 	if !ok {
 		logErrExit(Errors["THEME_UNKNOWN"])
@@ -85,5 +87,5 @@ func ChangeTheme(config []byte, theme string) {
 
 	updatedConf := re.ReplaceAllString(string(config), newTh)
 
-	ApplyChanges(updatedConf)
+	return []byte(updatedConf)
 }
