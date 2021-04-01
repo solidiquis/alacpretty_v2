@@ -17,9 +17,12 @@ func init() {
 
 	Errors = map[string]error{
 		"CONFIG_MISSING": errors.New("alacritty.yml not found."),
-		"THEME_UNKNOWN":  errors.New("Unrecognized theme."),
-		"THEME_INVALID":  errors.New("Argument 'theme' must be a valid key in Themes."),
 		"YAML_FORMAT":    errors.New("Please make sure that the alacritty.yml is formatted properly."),
+
+		"THEME_UNKNOWN": errors.New("Unrecognized theme."),
+		"THEME_INVALID": errors.New("Argument 'theme' must be a valid key in Themes."),
+
+		"OPACITY_UNKNOWN": errors.New("Opacity could not be found in alacritty.yml."),
 	}
 }
 

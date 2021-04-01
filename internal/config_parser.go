@@ -6,6 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 	"regexp"
+	"strconv"
 	"strings"
 )
 
@@ -65,7 +66,9 @@ func ApplyChanges(updatedConf []byte) {
 // Reports the current theme.
 func CurrentTheme(conf []byte) (string, error) {
 	for k, v := range Themes {
-		match, _ := regexp.Match(v, conf)
+		match, err := regexp.Match(v, conf)
+		must(err)
+
 		if match {
 			return k, nil
 		}
@@ -83,7 +86,7 @@ func ChangeTheme(config []byte, theme string) []byte {
 
 	newTh = strings.Trim(newTh, "\n")
 
-	re, _ := regexp.Compile(RE_COLORS)
+	re := regexp.MustCompile(RE_COLORS)
 	if match := re.Match(config); !match {
 		logErrExit(Errors["YAML_FORMAT"])
 	}
@@ -94,6 +97,38 @@ func ChangeTheme(config []byte, theme string) []byte {
 }
 
 // Returns the current opacity.
-//func CurrentOpacity() float64 {
+func CurrentOpacity(config []byte) (float64, error) {
+	re := regexp.MustCompile(RE_OPACITY)
+	match := re.Find(config)
+	if match == nil {
+		return float64(0), Errors["OPACITY_UNKNOWN"]
+	}
 
-//}
+	matchTrunc := strings.Trim(string(match), "background_opacity: ")
+
+	op, err := strconv.ParseFloat(matchTrunc, 64)
+	must(err)
+
+	return op, nil
+}
+
+// Returns config as byte slice with updated background opacity.
+func ChangeOpacity(config []byte, opacity float64) []byte {
+	re := regexp.MustCompile(RE_OPACITY)
+
+	if match := re.Match(config); !match {
+		logErrExit(Errors["YAML_FORMAT"])
+	}
+
+	if opacity < 0 {
+		opacity = float64(0)
+	} else if opacity > 1 {
+		opacity = 1.0
+	}
+
+	newOp := fmt.Sprintf("background_opacity: %.2f", opacity)
+
+	updatedConf := re.ReplaceAllString(string(config), newOp)
+
+	return []byte(updatedConf)
+}

@@ -4,7 +4,6 @@ package main
 import (
 	ap "github.com/solidiquis/alacpretty_v2/internal"
 	"os"
-
 	"sort"
 )
 
@@ -44,5 +43,8 @@ func main() {
 	switch os.Args[1] {
 	case "theme_shuffler":
 		themeShuffler(config)
+	default:
+		updatedConf := ap.ChangeOpacity(config, 1)
+		ap.ApplyChanges(updatedConf)
 	}
 }
