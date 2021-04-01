@@ -1,0 +1,30 @@
+#!/bin/bash
+
+txt=$( curl https://github.com/eendroroy/alacritty-theme/tree/master/themes ) 
+
+re="[a-zA-Z1-9_]+\.yaml"
+
+# Get matches
+match=""
+for str in $txt; do
+  [[ $str =~ $re ]]
+  if [[ ${BASH_REMATCH[0]} ]]; then
+    match+="${BASH_REMATCH[0]} "
+  fi
+done
+
+# Remove duplicate vals from string
+yamls=$( echo $match | xargs -n1 | sort -u | xargs )
+
+# Get the yamls and write to file
+for yml in $yamls; do
+  uri="https://raw.githubusercontent.com/eendroroy/alacritty-theme/master/themes/$yml"
+  theme=$( curl $uri )
+  
+cat << EOT >> themes
+const $yml =\`
+$theme
+\`
+
+EOT
+done

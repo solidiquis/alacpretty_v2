@@ -1,0 +1,4 @@
+github.com/solidiquis/ansigo v0.1.1 h1:38u9s/Odj8arTrfSzfB8j0TirlGKe2UH6GYLlRGDb7k=
+github.com/solidiquis/ansigo v0.1.1/go.mod h1:RGzuVSjR1qo9QnaINg9qsGeQxY1Cf027gvPpOR50LBg=
+golang.org/x/sys v0.0.0-20210326220804-49726bf1d181 h1:64ChN/hjER/taL4YJuA+gpLfIMT+/NFherRZixbxOhg=
+golang.org/x/sys v0.0.0-20210326220804-49726bf1d181/go.mod h1:h1NjWce9XRLGQEsW7wpKNCjG9DtNlClVuFLEZdDNbEs=
