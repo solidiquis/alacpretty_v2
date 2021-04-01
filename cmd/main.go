@@ -1,7 +1,7 @@
 package main
 
 import (
-	ap "github.com/solidiquis/alacpretty_v2"
+	ap "github.com/solidiquis/alacpretty_v2/internal"
 	//ansi "github.com/solidiquis/ansigo"
 )
 
