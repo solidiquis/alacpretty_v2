@@ -6,13 +6,7 @@ import (
 )
 
 func main() {
-	//config := ap.ConfigToBytes()
-	//theme, err := ap.CurrentTheme(config)
-	//if err != nil {
-	//theme = "ARGONAUT"
-	//}
-
-	//ap.ChangeTheme(config, theme)
+	config := ap.ConfigToBytes()
 
 	themes := make([]string, len(ap.Themes))
 	i := 0
@@ -24,5 +18,5 @@ func main() {
 	themesLi := ap.InitList(themes, 0, ap.LIST_FRAME_LENGTH)
 	themesLi.Render()
 
-	ap.ListenForInput(themesLi)
+	ap.ListenForInput(config, themesLi)
 }

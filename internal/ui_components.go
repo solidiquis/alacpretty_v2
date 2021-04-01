@@ -55,9 +55,9 @@ func (li *List) Render() {
 
 func (li *List) Update(key string) {
 	switch key {
-	case "k":
+	case "k", "<Up>":
 		li.ShiftUp()
-	case "j":
+	case "j", "<Down>":
 		li.ShiftDown()
 	}
 }
@@ -67,7 +67,7 @@ func (li *List) ShiftUp() {
 		return
 	}
 
-	if li.Selected < li.FrameHead() {
+	if li.Selected-1 < li.FrameHead() {
 		li.FrameTail--
 	}
 

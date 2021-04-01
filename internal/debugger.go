@@ -16,6 +16,6 @@ func Debug(charDevice string) func([]byte) {
 	f.Write([]byte("\n"))
 
 	return func(b []byte) {
-		f.Write([]byte(b))
+		f.Write(b)
 	}
 }
