@@ -16,7 +16,7 @@ var (
 	UP_ARROW    = ansi.FgRed("\u25BC")
 )
 
-// List encapsulates everything required to render a scrollable list on the UI.
+// List encapsulates everything required to render a scrollable list.
 type List struct {
 	// Tail end of the list's frame.
 	FrameTail int
