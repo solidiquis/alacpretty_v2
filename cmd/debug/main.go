@@ -4,6 +4,7 @@ package main
 import (
 	ap "github.com/solidiquis/alacpretty_v2/internal"
 	us "github.com/solidiquis/alacpretty_v2/internal/uistructs"
+	ansi "github.com/solidiquis/ansigo"
 	"os"
 	"sort"
 )
@@ -38,12 +39,27 @@ func themeShuffler(config []byte) {
 	ap.ListenForInput(config, themesLi)
 }
 
+func opacityGauge(percent, width, height, incrementer int) {
+	g := us.InitGauge(percent, width, height, incrementer)
+	g.Render()
+
+	stdin := make(chan string, 1)
+	go ansi.GetChar(stdin)
+
+	for {
+		key := <-stdin
+		g.Update(key)
+	}
+}
+
 func main() {
 	config := ap.ConfigToBytes()
 
 	switch os.Args[1] {
 	case "theme_shuffler":
 		themeShuffler(config)
+	case "opacity_gauge":
+		opacityGauge(0, 20, 1, 5)
 	default:
 		updatedConf := ap.ChangeOpacity(config, 1)
 		ap.ApplyChanges(updatedConf)
