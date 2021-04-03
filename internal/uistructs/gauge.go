@@ -29,6 +29,7 @@ type Gauge struct {
 	Incrementer int
 }
 
+// Initializes a pointer to a Gauge struct.
 func InitGauge(percent, width, height, incrementer int) *Gauge {
 	if percent > 100 {
 		percent = 100
@@ -42,6 +43,7 @@ func InitGauge(percent, width, height, incrementer int) *Gauge {
 	}
 }
 
+// Renders the gauge to the terminal.
 func (g *Gauge) Render() {
 	mdSps := make([]string, g.Width)
 	hzLns := make([]string, g.Width)
@@ -91,6 +93,7 @@ func (g *Gauge) Render() {
 	fmt.Print(btm)
 }
 
+// Updates the Gauge on the UI with appropriate key press.
 func (g *Gauge) Update(key string) {
 	switch key {
 	case "h", "<Left>":
@@ -100,10 +103,12 @@ func (g *Gauge) Update(key string) {
 	}
 }
 
+// Presents a printable, presentable representation of the percent.
 func (g *Gauge) PercentStr() string {
 	return fmt.Sprintf("%.1f%%", float64(g.Percent))
 }
 
+// Increments the gauge by the specified incrementer amount.
 func (g *Gauge) Increment() {
 	if g.Percent >= 100 {
 		return
@@ -119,6 +124,7 @@ func (g *Gauge) Increment() {
 	g.Render()
 }
 
+// Decrements the gauge by the specific incrementer amount.
 func (g *Gauge) Decrement() {
 	if g.Percent <= 0 {
 		return

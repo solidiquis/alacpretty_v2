@@ -39,8 +39,13 @@ func themeShuffler(config []byte) {
 	ap.ListenForInput(config, themesLi)
 }
 
-func opacityGauge(percent, width, height, incrementer int) {
-	g := us.InitGauge(percent, width, height, incrementer)
+func opacityGauge(config []byte, width, height, incrementer int) {
+	curOp, err := ap.CurrentOpacity(config)
+	if err != nil {
+		panic(err)
+	}
+
+	g := us.InitGauge(int(curOp*100.0), width, height, incrementer)
 	g.Render()
 
 	stdin := make(chan string, 1)
@@ -49,6 +54,8 @@ func opacityGauge(percent, width, height, incrementer int) {
 	for {
 		key := <-stdin
 		g.Update(key)
+		updatedConf := ap.ChangeOpacity(config, float64(g.Percent)/100.0)
+		ap.ApplyChanges(updatedConf)
 	}
 }
 
@@ -59,7 +66,7 @@ func main() {
 	case "theme_shuffler":
 		themeShuffler(config)
 	case "opacity_gauge":
-		opacityGauge(0, 20, 1, 5)
+		opacityGauge(config, 20, 1, 5)
 	default:
 		updatedConf := ap.ChangeOpacity(config, 1)
 		ap.ApplyChanges(updatedConf)
