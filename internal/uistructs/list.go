@@ -7,7 +7,7 @@ import (
 
 const (
 	// Determines how many items to show before overflow.
-	LIST_FRAME_LENGTH = 10
+	OVERFLOW_LENGTH = 10
 )
 
 var (
@@ -26,6 +26,12 @@ type List struct {
 
 	// Items of the list.
 	Items []string
+
+	// Items that match user input.
+	Matches []string
+
+	// User input.
+	Input string
 }
 
 // Initializes a List struct with items sorted alphabetically.
@@ -34,8 +40,13 @@ func InitList(items []string, selected int) *List {
 		selected = len(items) - 1
 	}
 
-	frameLn := LIST_FRAME_LENGTH
-	offset := LIST_FRAME_LENGTH - 4
+	frameLn := len(items)
+	offset := 0
+
+	if len(items) > OVERFLOW_LENGTH {
+		frameLn = OVERFLOW_LENGTH
+		offset = OVERFLOW_LENGTH - 4
+	}
 
 	if selected > frameLn-1 {
 		if selected+offset > len(items)-1 {
@@ -52,28 +63,38 @@ func InitList(items []string, selected int) *List {
 	}
 }
 
-// Renders list to the terminal, LIST_FRAME_LENGTH items at a time.
+// Renders list to the terminal, OVERFLOW_LENGTH items at a time.
 // Uses a sliding window determined by li.FrameTail and li.FrameHead()
 // to determine which items are visible at any given point in time.
 func (li *List) Render() {
 	colOffset := "   "
-	elements := make([]string, len(li.Items))
 
-	for i, item := range li.Items {
+	var elements []string
+	var iterable []string
+
+	if len(li.Matches) > 0 {
+		elements = make([]string, len(li.Matches))
+		iterable = li.Matches
+	} else {
+		elements = make([]string, len(li.Items))
+		iterable = li.Items
+	}
+
+	for i, item := range iterable {
 		elements[i] = fmt.Sprintf("%s%s", colOffset, item)
 	}
 
 	elements[li.Selected] = fmt.Sprintf(
 		" %s %s",
 		RIGHT_ARROW,
-		ansi.FgMagenta(li.Items[li.Selected]),
+		ansi.FgMagenta(iterable[li.Selected]),
 	)
 
 	for i := li.FrameHead(); i < li.FrameTail; i++ {
 		ansi.EraseLine()
 		fmt.Println(elements[i])
 	}
-	ansi.CursorUp(LIST_FRAME_LENGTH)
+	ansi.CursorUp(len(iterable))
 }
 
 // Implements scrolling behavior of list, allowing user to navigate
@@ -103,7 +124,7 @@ func (li *List) ShiftUp() {
 
 // Handles downwards list navigation.
 func (li *List) ShiftDown() {
-	if li.Selected+1 > len(li.Items)-1 {
+	if li.Selected+1 > len(li.Items)-1 || li.NextItem() == "" {
 		return
 	}
 
@@ -117,5 +138,29 @@ func (li *List) ShiftDown() {
 
 // Determines the starting, leftmost position of the sliding window.
 func (li *List) FrameHead() int {
-	return li.FrameTail - LIST_FRAME_LENGTH
+	return li.FrameTail - OVERFLOW_LENGTH
+}
+
+func (li *List) MakeSelection() string {
+	if len(li.Matches) > 0 {
+		return li.Matches[li.Selected]
+	}
+
+	return li.Items[li.Selected]
+}
+
+func (li *List) FocusedItem() string {
+	if len(li.Matches) > 0 {
+		return li.Matches[li.Selected]
+	}
+
+	return li.Items[li.Selected]
+}
+
+func (li *List) NextItem() string {
+	if len(li.Matches) > 0 {
+		return li.Matches[li.Selected+1]
+	}
+
+	return li.Items[li.Selected+1]
 }
